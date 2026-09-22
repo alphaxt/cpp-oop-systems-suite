@@ -1,0 +1,28 @@
+# Build output
+build/
+*.o
+*.obj
+*.exe
+*.out
+
+# Visual Studio files (not needed for cross-platform builds)
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vs/
+Debug/
+Release/
+x64/
+x86/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store

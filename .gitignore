@@ -1,0 +1,38 @@
+# Binaries and object files
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# Build directories
+build/
+bin/
+out/
+.cache/
+
+# IDE and Editor files
+.vscode/
+.vs/
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.suo
+*.workspace
+.idea/
+*.swp
+*~
+
+# Persistent runtime data files
+*.txt.bak
+hospital-management/*.txt
+hotel-management/*.txt
+student-management/*.txt
+!*/CMakeLists.txt
+!*/Makefile
