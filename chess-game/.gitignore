@@ -1,0 +1,19 @@
+# Build outputs
+build/
+ChessGame
+*.o
+*.obj
+*.exe
+*.out
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.cmake
+
+# IDE / editor
+.vscode/
+.vs/
+*.swp
+.DS_Store

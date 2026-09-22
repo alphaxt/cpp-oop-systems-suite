@@ -3,7 +3,7 @@ CXXFLAGS ?= -std=c++17 -Wall -Wextra -O2
 
 BIN_DIR = bin
 
-all: dirs hospital hotel student
+all: dirs hospital hotel student chess
 	@echo "All systems built successfully in $(BIN_DIR)/"
 
 dirs:
@@ -18,7 +18,10 @@ hotel:
 student:
 	$(CXX) $(CXXFLAGS) -Istudent-management/include student-management/src/*.cpp -o $(BIN_DIR)/student_system
 
+chess:
+	$(CXX) $(CXXFLAGS) -Ichess-game/include chess-game/src/*.cpp -o $(BIN_DIR)/chess_game
+
 clean:
 	rm -rf $(BIN_DIR)
 
-.PHONY: all dirs hospital hotel student clean
+.PHONY: all dirs hospital hotel student chess clean

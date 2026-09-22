@@ -32,3 +32,18 @@ add_executable(student_system
     student-management/src/StudentSystem.cpp
 )
 target_include_directories(student_system PRIVATE student-management/include)
+
+# 4. Chess Game
+add_executable(chess_game
+    chess-game/src/main.cpp
+    chess-game/src/Bishop.cpp
+    chess-game/src/Board.cpp
+    chess-game/src/Game.cpp
+    chess-game/src/King.cpp
+    chess-game/src/Knight.cpp
+    chess-game/src/Pawn.cpp
+    chess-game/src/Piece.cpp
+    chess-game/src/Queen.cpp
+    chess-game/src/Rook.cpp
+)
+target_include_directories(chess_game PRIVATE chess-game/include)
