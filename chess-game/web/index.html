@@ -80,6 +80,9 @@
           <button class="btn" onclick="flipBoard()">
             <span>🔃</span> Flip Board
           </button>
+          <button class="btn" id="sound-btn" onclick="toggleSound()" style="grid-column: span 2;">
+            <span>🔊</span> Sound: ON
+          </button>
         </div>
       </div>
 
@@ -127,6 +130,29 @@
     </aside>
 
   </main>
+
+  <!-- Pawn Promotion Modal -->
+  <div id="promotion-modal" class="modal-overlay">
+    <div class="modal-card">
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 6px;">Pawn Promotion</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Choose a piece to promote your pawn:</p>
+      <div id="promotion-choices" class="promotion-choices">
+        <!-- Dynamically rendered pieces (Queen, Rook, Bishop, Knight) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over / Checkmate Modal -->
+  <div id="game-over-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div id="game-over-icon" style="font-size: 54px; margin-bottom: 10px;">🏆</div>
+      <h2 id="game-over-title" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Checkmate!</h2>
+      <p id="game-over-desc" style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">White wins by checkmate.</p>
+      <button class="btn btn-primary" onclick="resetGame(); closeGameOverModal();" style="width: 100%; padding: 12px;">
+        <span>🔄</span> Play Again
+      </button>
+    </div>
+  </div>
 
   <!-- Emscripten WASM Output (Loads if compiled) -->
   <script src="chess.js" onerror="console.info('WASM binary not compiled yet. Running in browser simulation mode.')"></script>

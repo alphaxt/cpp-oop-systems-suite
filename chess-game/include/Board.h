@@ -21,4 +21,9 @@ public:
         if (x < 0 || x >= 8 || y < 0 || y >= 8) return nullptr;
         return squares[y][x];
     }
+
+    bool isPathClear(int startX, int startY, int endX, int endY) const;
+    bool isSquareAttacked(int x, int y, bool byWhite) const;
+    bool isCheck(bool whiteKing) const;
+    bool isMoveSafe(int startX, int startY, int endX, int endY, bool isWhite);
 };
