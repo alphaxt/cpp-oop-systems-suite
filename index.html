@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=chess-game/web/">
+  <link rel="canonical" href="https://alphaxt.github.io/cpp-oop-systems-suite/chess-game/web/">
+  <title>C++ Systems Suite | Muhammad Danish</title>
+  <script>
+    window.location.replace("chess-game/web/");
+  </script>
+  <style>
+    body {
+      background: #0b0f19;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #6366f1;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    a {
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <p style="font-size: 1.1rem; font-weight: 600; margin: 0 0 8px 0;">Launching C++ WebAssembly Chess Engine...</p>
+  <p style="font-size: 0.9rem; color: #94a3b8; margin: 0;"><a href="chess-game/web/">Click here if not redirected automatically</a></p>
+</body>
+</html>
