@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ WebAssembly Chess Engine | Muhammad Danish</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="brand">
+      <span class="brand-icon">♟️</span>
+      <div>
+        <div class="brand-title">C++17 Chess Engine</div>
+        <div class="brand-subtitle" id="engine-mode-note">Compiled to WebAssembly (WASM) & DOM</div>
+      </div>
+    </div>
+    
+    <div id="engine-badge" class="status-badge">
+      <span class="status-dot"></span> ⚡ WebAssembly (C++17 Engine Active)
+    </div>
+  </nav>
+
+  <!-- Main Workspace -->
+  <main class="main-wrapper">
+    
+    <!-- Left: Chessboard Section -->
+    <section class="board-section">
+      
+      <!-- Top Player Bar (Black) -->
+      <div class="player-bar">
+        <div class="player-info">
+          <span>⚫</span>
+          <span>Black Player</span>
+        </div>
+        <div id="graveyard-white" class="graveyard"></div>
+      </div>
+
+      <!-- 8x8 Board Frame -->
+      <div class="board-frame">
+        <div id="chessboard" class="chessboard"></div>
+      </div>
+
+      <!-- Bottom Player Bar (White) -->
+      <div class="player-bar">
+        <div class="player-info">
+          <span>⚪</span>
+          <span>White Player</span>
+        </div>
+        <div id="graveyard-black" class="graveyard"></div>
+      </div>
+
+    </section>
+
+    <!-- Right: Telemetry & Controls Sidebar -->
+    <aside class="sidebar">
+      
+      <!-- Match Status Card -->
+      <div class="card">
+        <div class="card-title">
+          <span>Match Telemetry</span>
+          <span id="turn-badge" style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; font-weight: 600;">⚪ White's Turn</span>
+        </div>
+        
+        <div id="engine-toast" class="engine-toast"></div>
+
+        <div class="controls-grid" style="margin-top: 10px;">
+          <button class="btn btn-primary" onclick="resetGame()">
+            <span>🔄</span> New Game
+          </button>
+          <button class="btn" onclick="flipBoard()">
+            <span>🔃</span> Flip Board
+          </button>
+        </div>
+      </div>
+
+      <!-- Move History Notation -->
+      <div class="card">
+        <div class="card-title">
+          <span>Move Notation Log</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">Algebraic</span>
+        </div>
+
+        <div id="move-history-container" class="move-history-container">
+          <table class="move-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">#</th>
+                <th style="width: 37%;">White</th>
+                <th style="width: 38%;">Black</th>
+              </tr>
+            </thead>
+            <tbody id="move-table-body">
+              <!-- Dynamically populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Architecture Tech Card -->
+      <div class="card">
+        <div class="card-title">
+          <span>System Architecture</span>
+          <span style="font-size: 0.75rem; color: var(--accent-gold);">C++17 ➔ WASM</span>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+          The core rule engine evaluates valid moves and matrix captures using low-level C++17 polymorphic classes (<code>Piece</code>, <code>Board</code>, <code>King</code>, <code>Queen</code>). Cross-compiled via Emscripten for sub-millisecond in-browser inference.
+        </p>
+        <div class="tech-pills">
+          <span class="tech-pill">C++17</span>
+          <span class="tech-pill">WebAssembly</span>
+          <span class="tech-pill">Emscripten</span>
+          <span class="tech-pill">OOP Polymorphism</span>
+          <span class="tech-pill">HTML5 Canvas / DOM</span>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- Emscripten WASM Output (Loads if compiled) -->
+  <script src="chess.js" onerror="console.info('WASM binary not compiled yet. Running in browser simulation mode.')"></script>
+  
+  <!-- Frontend Controller -->
+  <script src="app.js"></script>
+
+</body>
+</html>

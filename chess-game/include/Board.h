@@ -17,4 +17,8 @@ public:
     ~Board();
     void printBoard();
     bool movePiece(int startX, int startY, int endX, int endY);
+    Piece* getPiece(int x, int y) const {
+        if (x < 0 || x >= 8 || y < 0 || y >= 8) return nullptr;
+        return squares[y][x];
+    }
 };
